@@ -8,3 +8,12 @@ images:
 
 resources:
 - ../../base
+
+patches:
+- target:
+    kind: Deployment
+    name: .*
+  patch: |-
+    - op: replace
+      path: /metadata/name
+      value: demo-app-stage
